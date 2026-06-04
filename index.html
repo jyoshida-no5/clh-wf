@@ -49,6 +49,32 @@
       pointer-events: auto;
       transform: translateY(0);
     }
+    .concept-marquee {
+      overflow: hidden;
+      margin-inline: -16px;
+    }
+    .concept-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 18px;
+      animation: concept-marquee 26s linear infinite;
+    }
+    .concept-photo {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      background: #d4d4d8;
+      color: #71717a;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    @keyframes concept-marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body class="bg-white text-zinc-900 pb-20">
@@ -157,10 +183,18 @@
     </section>
 
     <section class="px-4 py-12">
-      <div class="aspect-[4/3] rounded bg-zinc-200">
-        <div class="flex h-full flex-col items-center justify-center text-zinc-500">
-          <i data-lucide="image" class="h-7 w-7"></i>
-          <span class="mt-2 text-xs">コンセプトビジュアル</span>
+      <div class="concept-marquee h-[340px] bg-zinc-50 py-8">
+        <div class="concept-track">
+          <div class="concept-photo h-[188px] w-[263px]">外観</div>
+          <div class="concept-photo h-[288px] w-[200px]">リビング</div>
+          <div class="concept-photo h-[150px] w-[225px]">キッチン</div>
+          <div class="concept-photo h-[219px] w-[275px]">中庭</div>
+          <div class="concept-photo h-[169px] w-[188px]">素材</div>
+          <div class="concept-photo h-[188px] w-[263px]">外観</div>
+          <div class="concept-photo h-[288px] w-[200px]">リビング</div>
+          <div class="concept-photo h-[150px] w-[225px]">キッチン</div>
+          <div class="concept-photo h-[219px] w-[275px]">中庭</div>
+          <div class="concept-photo h-[169px] w-[188px]">素材</div>
         </div>
       </div>
       <p class="mt-7 text-xs font-semibold text-zinc-500">CONCEPT</p>
