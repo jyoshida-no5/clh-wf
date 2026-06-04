@@ -58,7 +58,7 @@
         クレバリーホーム<br><span class="text-[11px] font-medium text-zinc-500">福山店・倉敷店</span>
       </a>
       <div class="flex items-center gap-2">
-        <button class="flex h-10 w-10 items-center justify-center rounded border border-zinc-200" aria-label="メニュー">
+        <button id="menu-modal-open" type="button" class="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-sm" aria-label="メニュー">
           <i data-lucide="menu" class="h-5 w-5"></i>
         </button>
       </div>
@@ -177,16 +177,6 @@
           <a href="#" class="shrink-0 text-xs font-semibold text-zinc-900">施工事例一覧</a>
         </div>
       </div>
-      <div class="mt-5 flex flex-wrap gap-2 px-4">
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">ローコスト住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">高級住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">平屋住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">狭小住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">三階建て住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">ガレージハウス</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">受賞住宅</a>
-        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">中庭のある家</a>
-      </div>
       <div class="no-scrollbar mt-6 flex snap-x gap-4 overflow-x-auto px-4">
         <article class="w-[78%] shrink-0 snap-start">
           <div class="aspect-[3/4] rounded bg-zinc-200">
@@ -208,6 +198,16 @@
           <h3 class="mt-4 text-sm font-semibold">家族時間を楽しむ平屋</h3>
           <p class="mt-2 text-xs leading-5 text-zinc-500">平屋 / LDK / 省エネ</p>
         </article>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-2 px-4">
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">ローコスト住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">高級住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">平屋住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">狭小住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">三階建て住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">ガレージハウス</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">受賞住宅</a>
+        <a href="#" class="rounded-full border border-zinc-300 px-3 py-2 text-xs font-semibold">中庭のある家</a>
       </div>
     </section>
 
@@ -339,6 +339,43 @@
     </div>
   </div>
 
+  <div id="menu-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/55" data-menu-modal-close></div>
+    <div class="absolute inset-x-4 top-4 rounded bg-white p-5 shadow-xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold text-zinc-500">MENU</p>
+          <h2 class="mt-1 text-lg font-bold">メニュー</h2>
+        </div>
+        <button type="button" class="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200" aria-label="閉じる" data-menu-modal-close>
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <nav class="mt-6 space-y-1">
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          トップ
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          イベント情報
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          施工事例
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          モデルハウス
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          資料請求
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+      </nav>
+    </div>
+  </div>
+
   <script>
     lucide.createIcons();
     const slides = Array.from(document.querySelectorAll('.hero-slide'));
@@ -355,6 +392,9 @@
     const phoneModal = document.getElementById('phone-modal');
     const phoneModalOpen = document.getElementById('phone-modal-open');
     const phoneModalCloseButtons = document.querySelectorAll('[data-phone-modal-close]');
+    const menuModal = document.getElementById('menu-modal');
+    const menuModalOpen = document.getElementById('menu-modal-open');
+    const menuModalCloseButtons = document.querySelectorAll('[data-menu-modal-close]');
     const bottomNav = document.getElementById('bottom-nav');
     const toggleBottomNav = () => {
       if (window.scrollY > 120) {
@@ -373,6 +413,17 @@
     phoneModalCloseButtons.forEach((button) => {
       button.addEventListener('click', () => {
         phoneModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    menuModalOpen.addEventListener('click', () => {
+      menuModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+    menuModalCloseButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        menuModal.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
     });
