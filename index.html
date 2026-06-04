@@ -38,6 +38,17 @@
         radial-gradient(circle at 50% 22%, rgba(255,255,255,.2), transparent 32%),
         linear-gradient(135deg, #e7e5e4, #57534e);
     }
+    .bottom-nav {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(100%);
+      transition: opacity 360ms ease, transform 360ms ease;
+    }
+    .bottom-nav.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-white text-zinc-900 pb-20">
@@ -286,7 +297,7 @@
     <p class="mt-6">資料請求 / イベント / モデルハウス / 施工事例 / よくある質問</p>
   </footer>
 
-  <nav class="fixed inset-x-0 bottom-0 z-50 h-[60px] border-t border-zinc-200 bg-white md:hidden">
+  <nav id="bottom-nav" class="bottom-nav fixed inset-x-0 bottom-0 z-50 h-[60px] border-t border-zinc-200 bg-white md:hidden">
     <div class="grid h-full grid-cols-3">
       <a href="#request" class="flex flex-col items-center justify-center gap-1 bg-zinc-900 text-white">
         <i data-lucide="file-text" class="h-5 w-5"></i>
@@ -344,6 +355,17 @@
     const phoneModal = document.getElementById('phone-modal');
     const phoneModalOpen = document.getElementById('phone-modal-open');
     const phoneModalCloseButtons = document.querySelectorAll('[data-phone-modal-close]');
+    const bottomNav = document.getElementById('bottom-nav');
+    const toggleBottomNav = () => {
+      if (window.scrollY > 120) {
+        bottomNav.classList.add('is-visible');
+      } else {
+        bottomNav.classList.remove('is-visible');
+      }
+    };
+    toggleBottomNav();
+    window.addEventListener('scroll', toggleBottomNav, { passive: true });
+
     phoneModalOpen.addEventListener('click', () => {
       phoneModal.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
