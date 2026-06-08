@@ -77,8 +77,10 @@
     }
     @media (min-width: 1024px) {
       .concept-marquee {
-        margin-inline: 0;
-        border-radius: 8px;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0;
       }
     }
   </style>
@@ -212,7 +214,7 @@
     </section>
 
     <section class="px-4 py-12 lg:mx-auto lg:max-w-[1200px] lg:px-8 xl:px-0 lg:py-24">
-      <div class="concept-marquee h-[340px] bg-zinc-50 py-8">
+      <div class="concept-marquee h-[340px] bg-white py-8">
         <div class="concept-track">
           <div class="concept-photo h-[188px] w-[263px]">外観</div>
           <div class="concept-photo h-[288px] w-[200px]">リビング</div>
