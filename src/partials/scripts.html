@@ -1,0 +1,64 @@
+<script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    const dots = Array.from(document.querySelectorAll('.hero-dot'));
+    let currentSlide = 0;
+    if (slides.length && dots.length) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('is-active');
+        dots[currentSlide].className = 'hero-dot h-1.5 w-1.5 rounded-full bg-white/45';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('is-active');
+        dots[currentSlide].className = 'hero-dot h-1.5 w-6 rounded-full bg-white';
+      }, 4200);
+    }
+
+    const phoneModal = document.getElementById('phone-modal');
+    const phoneModalOpen = document.getElementById('phone-modal-open');
+    const phoneModalCloseButtons = document.querySelectorAll('[data-phone-modal-close]');
+    const menuModal = document.getElementById('menu-modal');
+    const menuModalOpen = document.getElementById('menu-modal-open');
+    const menuModalCloseButtons = document.querySelectorAll('[data-menu-modal-close]');
+    const bottomNav = document.getElementById('bottom-nav');
+    const toggleBottomNav = () => {
+      if (window.scrollY > 120) {
+        bottomNav.classList.add('is-visible');
+      } else {
+        bottomNav.classList.remove('is-visible');
+      }
+    };
+    if (bottomNav) {
+      toggleBottomNav();
+      window.addEventListener('scroll', toggleBottomNav, { passive: true });
+    }
+
+    if (phoneModal && phoneModalOpen) {
+      phoneModalOpen.addEventListener('click', () => {
+        phoneModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+      phoneModalCloseButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          phoneModal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+    }
+
+    if (menuModal && menuModalOpen) {
+      menuModalOpen.addEventListener('click', () => {
+        menuModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+      menuModalCloseButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          menuModal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

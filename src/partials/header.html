@@ -1,0 +1,41 @@
+<body class="bg-white text-zinc-900 pb-20 lg:pb-0">
+  <header class="pointer-events-none fixed inset-x-0 top-0 z-40 lg:hidden">
+    <div class="flex items-center justify-between px-4 pt-4">
+      <a href="{{homeHref}}" class="pointer-events-auto rounded-full bg-white/95 px-4 py-2 text-sm font-bold leading-tight shadow-sm backdrop-blur">
+        クレバリーホーム<br><span class="text-[11px] font-medium text-zinc-500">福山店・倉敷店</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button id="menu-modal-open" type="button" class="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white/95 shadow-sm backdrop-blur" aria-label="メニュー">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <header class="fixed inset-x-0 top-0 z-40 hidden h-20 bg-white/95 shadow-sm backdrop-blur lg:block">
+    <div class="mx-auto flex h-full max-w-[1200px] items-center justify-between px-8 xl:px-0">
+      <a href="{{homeHref}}" class="text-lg font-bold leading-tight">
+        クレバリーホーム<br><span class="text-xs font-medium text-zinc-500">福山店・倉敷店</span>
+      </a>
+      <nav class="flex items-center gap-5 text-sm font-semibold text-zinc-700">
+        <a href="#">コンセプト</a>
+        <a href="#">性能・テクノロジー</a>
+        <a href="#">施工事例</a>
+        <a href="#">モデルハウス</a>
+        <a href="{{eventHref}}">イベント情報</a>
+      </nav>
+      <div class="flex items-center gap-4 text-right">
+        <a href="tel:0849603110" class="block leading-tight">
+          <span class="block text-[11px] font-medium text-zinc-500">福山店</span>
+          <span class="mt-1 block text-[15px] font-bold text-zinc-900">084-960-3110</span>
+        </a>
+        <a href="tel:0864769084" class="block leading-tight">
+          <span class="block text-[11px] font-medium text-zinc-500">倉敷店</span>
+          <span class="mt-1 block text-[15px] font-bold text-zinc-900">086-476-9084</span>
+        </a>
+      </div>
+      <a href="#request" class="flex h-12 items-center rounded bg-zinc-900 px-5 text-center text-xs font-semibold leading-4 text-white">
+        お問い合わせ<br>資料請求
+      </a>
+    </div>
+  </header>

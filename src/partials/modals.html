@@ -1,0 +1,83 @@
+<div id="phone-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/55" data-phone-modal-close></div>
+    <div class="absolute inset-x-4 bottom-5 rounded bg-white p-5 shadow-xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="mt-1 text-lg font-bold">電話する店舗を選択</h2>
+        </div>
+        <button type="button" class="flex h-9 w-9 items-center justify-center rounded border border-zinc-200" aria-label="閉じる" data-phone-modal-close>
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <div class="mt-5 space-y-3">
+        <a href="tel:0849603110" class="block rounded bg-zinc-50 p-4">
+          <p class="text-sm font-semibold">クレバリーホーム　福山店</p>
+          <p class="mt-2 text-xl font-bold">084-960-3110</p>
+        </a>
+        <a href="tel:0864769084" class="block rounded bg-zinc-50 p-4">
+          <p class="text-sm font-semibold">クレバリーホーム　倉敷店</p>
+          <p class="mt-2 text-xl font-bold">086-476-9084</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="menu-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/55" data-menu-modal-close></div>
+    <div class="absolute inset-x-4 top-4 rounded bg-white p-5 shadow-xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="mt-1 text-lg font-bold">メニュー</h2>
+        </div>
+        <button type="button" class="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200" aria-label="閉じる" data-menu-modal-close>
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <nav class="mt-6 space-y-1">
+        <a href="{{homeHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          トップ
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          コンセプト
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          性能・テクノロジー
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          施工事例
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          モデルハウス
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="{{eventHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          イベント情報
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          家づくりコラム
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          お知らせ一覧
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          会社概要
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          お問い合わせ（資料請求）
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+          プライバシーポリシー
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </a>
+      </nav>
+    </div>
+  </div>
