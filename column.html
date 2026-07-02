@@ -59,6 +59,45 @@
       font-size: 11px;
       font-weight: 600;
     }
+    .category-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid #d4d4d8;
+      border-left: 1px solid #d4d4d8;
+      background: #fff;
+    }
+    .category-tab {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #d4d4d8;
+      border-bottom: 1px solid #d4d4d8;
+      padding: 10px 12px;
+      color: #3f3f46;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.45;
+      text-align: center;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .category-tab:hover {
+      background: #f4f4f5;
+      color: #18181b;
+    }
+    .category-tab[aria-current="page"] {
+      background: #18181b;
+      color: #fff;
+    }
+    @media (min-width: 1024px) {
+      .category-tabs {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .category-tab {
+        min-height: 56px;
+        font-size: 14px;
+      }
+    }
     details[open] .accordion-mark::before { content: "-"; }
     details:not([open]) .accordion-mark::before { content: "+"; }
   </style>
@@ -121,13 +160,12 @@
 
     <section class="border-y border-zinc-100 bg-zinc-50 px-4 py-6 lg:px-8 xl:px-0">
       <div class="lg:mx-auto lg:max-w-[1200px]">
-        <p class="text-sm font-bold">カテゴリ</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <a href="column.html" class="rounded-full bg-zinc-900 px-4 py-2 text-xs font-semibold text-white" aria-current="page">全てを見る</a>
-          <a href="column.html?category=voice" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">お施主様の声</a>
-          <a href="column.html?category=money" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">お金について</a>
-          <a href="column.html?category=process" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">段取りについて</a>
-          <a href="column.html?category=other" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">その他</a>
+        <div class="category-tabs" role="list" aria-label="コラムカテゴリ">
+          <a href="column.html" class="category-tab" aria-current="page">全てを見る</a>
+          <a href="column.html?category=voice" class="category-tab">お施主様の声</a>
+          <a href="column.html?category=money" class="category-tab">お金について</a>
+          <a href="column.html?category=process" class="category-tab">段取りについて</a>
+          <a href="column.html?category=other" class="category-tab">その他</a>
         </div>
       </div>
     </section>

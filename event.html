@@ -59,6 +59,45 @@
       font-size: 11px;
       font-weight: 600;
     }
+    .category-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid #d4d4d8;
+      border-left: 1px solid #d4d4d8;
+      background: #fff;
+    }
+    .category-tab {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #d4d4d8;
+      border-bottom: 1px solid #d4d4d8;
+      padding: 10px 12px;
+      color: #3f3f46;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.45;
+      text-align: center;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .category-tab:hover {
+      background: #f4f4f5;
+      color: #18181b;
+    }
+    .category-tab[aria-current="page"] {
+      background: #18181b;
+      color: #fff;
+    }
+    @media (min-width: 1024px) {
+      .category-tabs {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .category-tab {
+        min-height: 56px;
+        font-size: 14px;
+      }
+    }
     details[open] .accordion-mark::before { content: "-"; }
     details:not([open]) .accordion-mark::before { content: "+"; }
   </style>
@@ -120,14 +159,13 @@
 
     <section class="border-y border-zinc-100 bg-zinc-50 px-4 py-6 lg:px-8 xl:px-0">
       <div class="lg:mx-auto lg:max-w-[1200px]">
-        <p class="text-sm font-bold">絞り込み検索</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <a href="#" class="rounded-full bg-zinc-900 px-4 py-2 text-xs font-semibold text-white">全てを見る</a>
-          <a href="#" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">見学会</a>
-          <a href="#" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">福山店のイベント</a>
-          <a href="#" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">倉敷店のイベント</a>
-          <a href="#" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">相談会・セミナー</a>
-          <a href="#" class="rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold text-zinc-700">その他</a>
+        <div class="category-tabs" role="list" aria-label="イベントカテゴリ">
+          <a href="#" class="category-tab" aria-current="page">全てを見る</a>
+          <a href="#" class="category-tab">見学会</a>
+          <a href="#" class="category-tab">福山店のイベント</a>
+          <a href="#" class="category-tab">倉敷店のイベント</a>
+          <a href="#" class="category-tab">相談会・セミナー</a>
+          <a href="#" class="category-tab">その他</a>
         </div>
       </div>
     </section>
