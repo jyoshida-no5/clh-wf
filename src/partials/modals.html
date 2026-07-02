@@ -22,6 +22,48 @@
     </div>
   </div>
 
+  <div id="process-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/55" data-process-modal-close></div>
+    <div class="absolute inset-x-4 top-8 max-h-[calc(100vh-64px)] overflow-y-auto rounded bg-white p-5 shadow-xl lg:left-1/2 lg:right-auto lg:top-1/2 lg:w-[640px] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:p-8">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="mt-1 text-lg font-bold lg:text-2xl">クレバリーホームの家づくりの進め方</h2>
+          <p class="mt-3 text-sm leading-7 text-zinc-600">最初のヒアリングから、設計、資金計画、契約、着工、完成後のサポートまで、家族のペースに合わせて一つずつ進めます。</p>
+        </div>
+        <button type="button" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-zinc-200" aria-label="閉じる" data-process-modal-close>
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <ol class="mt-6 space-y-3">
+        <li class="rounded bg-zinc-50 p-4">
+          <p class="text-xs font-semibold text-zinc-500">STEP 01</p>
+          <p class="mt-1 text-sm font-bold">ヒアリング</p>
+          <p class="mt-2 text-xs leading-6 text-zinc-600">家族構成、暮らし方、理想の間取り、土地や予算の状況を丁寧に伺います。</p>
+        </li>
+        <li class="rounded bg-zinc-50 p-4">
+          <p class="text-xs font-semibold text-zinc-500">STEP 02</p>
+          <p class="mt-1 text-sm font-bold">プラン・資金計画</p>
+          <p class="mt-2 text-xs leading-6 text-zinc-600">要望をもとに、間取り、外観、性能、資金計画を整理してご提案します。</p>
+        </li>
+        <li class="rounded bg-zinc-50 p-4">
+          <p class="text-xs font-semibold text-zinc-500">STEP 03</p>
+          <p class="mt-1 text-sm font-bold">仕様打ち合わせ</p>
+          <p class="mt-2 text-xs leading-6 text-zinc-600">外壁タイル、内装、設備、収納、照明など、暮らしに関わる細部を決めていきます。</p>
+        </li>
+        <li class="rounded bg-zinc-50 p-4">
+          <p class="text-xs font-semibold text-zinc-500">STEP 04</p>
+          <p class="mt-1 text-sm font-bold">着工・完成・お引き渡し</p>
+          <p class="mt-2 text-xs leading-6 text-zinc-600">工事中も進捗を確認しながら、完成後のお引き渡しまでしっかり伴走します。</p>
+        </li>
+        <li class="rounded bg-zinc-50 p-4">
+          <p class="text-xs font-semibold text-zinc-500">STEP 05</p>
+          <p class="mt-1 text-sm font-bold">アフターサポート</p>
+          <p class="mt-2 text-xs leading-6 text-zinc-600">住み始めてからも、点検や保証を通じて長く安心できる暮らしを支えます。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+
   <div id="menu-modal" class="fixed inset-0 z-[60] hidden">
     <div class="absolute inset-0 bg-black/55" data-menu-modal-close></div>
     <div class="absolute inset-x-4 top-4 rounded bg-white p-5 shadow-xl">
@@ -38,19 +80,19 @@
           トップ
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
-        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+        <a href="{{conceptHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
           コンセプト
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
-        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+        <a href="{{technologyHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
           性能・テクノロジー
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
-        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+        <a href="{{workHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
           施工事例
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
-        <a href="#" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+        <a href="{{columnHref}}" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
           モデルハウス
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>

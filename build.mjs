@@ -61,6 +61,10 @@ for (const pageFile of pageFiles) {
     mainClass: meta.mainClass ?? '',
     homeHref: meta.homeHref,
     eventHref: meta.eventHref,
+    conceptHref: meta.conceptHref ?? 'concept.html',
+    technologyHref: meta.technologyHref ?? 'technology.html',
+    workHref: meta.workHref ?? 'work.html',
+    columnHref: meta.columnHref ?? 'column.html',
   };
   const html = render(body, vars);
   const outPath = path.join(baseDir, meta.out);
