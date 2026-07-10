@@ -1,0 +1,136 @@
+<!--
+{
+  "title": "お問い合わせ・資料請求 | クレバリーホーム福山店・倉敷店",
+  "out": "contact.html",
+  "homeHref": "index.html",
+  "eventHref": "event.html",
+  "conceptHref": "concept.html",
+  "technologyHref": "technology.html",
+  "workHref": "work.html",
+  "columnHref": "column.html"
+}
+-->
+{{> head}}
+{{> header}}
+<main class="pt-24 lg:pt-32">
+  <section class="px-4 pb-12 pt-8 lg:mx-auto lg:max-w-[1200px] lg:px-8 xl:px-0 lg:pb-20 lg:pt-12">
+    <nav class="flex items-center gap-2 text-xs text-zinc-500">
+      <a href="index.html">トップ</a>
+      <span>/</span>
+      <span class="text-zinc-900">お問い合わせ・資料請求</span>
+    </nav>
+
+    <div class="mx-auto mt-10 max-w-[920px] lg:mt-14">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold leading-tight lg:text-5xl">資料請求・お問い合わせ</h1>
+        <p class="mt-5 text-sm leading-7 text-zinc-600 lg:text-base">家づくりに関するご相談や資料請求を承ります。<br class="hidden sm:block">必要事項をご入力のうえ、お気軽にお問い合わせください。</p>
+      </div>
+
+      <form id="request" class="mt-12 lg:mt-20" action="#" method="post">
+        <div class="border-t border-zinc-300">
+          <fieldset class="border-b border-zinc-300 py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+            <div>
+              <legend class="flex items-center gap-3 text-sm font-bold"><span class="bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>お問い合わせ内容</legend>
+            </div>
+            <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4">
+              <label class="flex cursor-pointer items-center gap-2 text-sm font-medium"><input type="checkbox" name="inquiry" value="catalog" class="h-4 w-4 rounded border-zinc-300 text-zinc-900" checked>資料請求</label>
+              <label class="flex cursor-pointer items-center gap-2 text-sm font-medium"><input type="checkbox" name="inquiry" value="consultation" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">家づくりの相談</label>
+              <label class="flex cursor-pointer items-center gap-2 text-sm font-medium"><input type="checkbox" name="inquiry" value="visit" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">来場予約</label>
+              <label class="flex cursor-pointer items-center gap-2 text-sm font-medium"><input type="checkbox" name="inquiry" value="other" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">その他</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="border-b border-zinc-300 py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+            <div>
+              <legend class="text-sm font-bold">ご希望のカタログ</legend>
+              <p class="mt-2 text-xs leading-5 text-zinc-500">ご希望の資料をお選びください。複数選択できます。</p>
+            </div>
+            <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-4 lg:mt-0">
+              <label class="cursor-pointer">
+                <div class="aspect-[3/4] border border-zinc-200 bg-zinc-100">
+                  <div class="flex h-full flex-col items-center justify-center text-zinc-400"><i data-lucide="book-open" class="h-6 w-6"></i><span class="mt-2 text-[11px]">カタログ表紙</span></div>
+                </div>
+                <span class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="catalog" value="2030" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">2030</span>
+                <span class="mt-1 block text-xs leading-5 text-zinc-600">2030年の生活で後悔したくない方へ</span>
+              </label>
+              <label class="cursor-pointer">
+                <div class="aspect-[3/4] border border-zinc-200 bg-zinc-100">
+                  <div class="flex h-full flex-col items-center justify-center text-zinc-400"><i data-lucide="book-open" class="h-6 w-6"></i><span class="mt-2 text-[11px]">カタログ表紙</span></div>
+                </div>
+                <span class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="catalog" value="general" class="h-4 w-4 rounded border-zinc-300 text-zinc-900" checked>クレバリーホーム</span>
+                <span class="mt-1 block text-xs leading-5 text-zinc-600">クレバリーホームの全てを知りたい方へ</span>
+              </label>
+              <label class="cursor-pointer">
+                <div class="aspect-[3/4] border border-zinc-200 bg-zinc-100">
+                  <div class="flex h-full flex-col items-center justify-center text-zinc-400"><i data-lucide="book-open" class="h-6 w-6"></i><span class="mt-2 text-[11px]">カタログ表紙</span></div>
+                </div>
+                <span class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="catalog" value="inumo" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">イヌモ</span>
+                <span class="mt-1 block text-xs leading-5 text-zinc-600">愛犬と共に生きる暮らしを求める方へ</span>
+              </label>
+              <label class="cursor-pointer">
+                <div class="aspect-[3/4] border border-zinc-200 bg-zinc-100">
+                  <div class="flex h-full flex-col items-center justify-center text-zinc-400"><i data-lucide="book-open" class="h-6 w-6"></i><span class="mt-2 text-[11px]">カタログ表紙</span></div>
+                </div>
+                <span class="mt-3 flex items-center gap-2 text-sm font-semibold"><input type="checkbox" name="catalog" value="enelite" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">エネリートサーモ</span>
+                <span class="mt-1 block text-xs leading-5 text-zinc-600">省エネと快適な暮らしを実現したい方へ</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="border-b border-zinc-300">
+            <div class="py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+              <label for="name" class="flex items-center gap-3 text-sm font-bold"><span class="bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>お名前</label>
+              <input id="name" name="name" required autocomplete="name" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0" type="text">
+            </div>
+            <div class="pb-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:pb-8">
+              <label for="furigana" class="text-sm font-bold">フリガナ</label>
+              <input id="furigana" name="furigana" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0" type="text">
+            </div>
+          </div>
+
+          <div class="border-b border-zinc-300 py-7 lg:py-8">
+            <div class="lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+              <label for="postal-code" class="text-sm font-bold"><span class="mr-3 bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>郵便番号</label>
+              <div class="mt-4 lg:mt-0"><input id="postal-code" name="postal-code" required inputmode="numeric" placeholder="例：720-0000" class="h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2"><p class="mt-2 text-xs text-zinc-500">郵便番号入力で、住所が自動入力されます</p></div>
+            </div>
+            <div class="mt-6 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+              <label for="prefecture" class="text-sm font-bold"><span class="mr-3 bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>都道府県</label>
+              <select id="prefecture" name="prefecture" required class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0"><option value="">選択してください</option><option>広島県</option><option>岡山県</option></select>
+            </div>
+            <div class="mt-6 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+              <label for="city" class="text-sm font-bold"><span class="mr-3 bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>市区町村</label>
+              <input id="city" name="city" required placeholder="例：福山市神辺町" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0">
+            </div>
+            <div class="mt-6 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+              <label for="address" class="text-sm font-bold"><span class="mr-3 bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>番地</label>
+              <input id="address" name="address" required placeholder="例：平野36-2" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0">
+            </div>
+          </div>
+
+          <div class="border-b border-zinc-300 py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+            <label for="email" class="flex items-center gap-3 text-sm font-bold"><span class="bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>メールアドレス</label>
+            <input id="email" name="email" required autocomplete="email" type="email" placeholder="例：sample@example.com" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0">
+          </div>
+          <div class="border-b border-zinc-300 py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+            <label for="tel" class="flex items-center gap-3 text-sm font-bold"><span class="bg-rose-400 px-2 py-1 text-[11px] text-white">必須</span>電話番号</label>
+            <input id="tel" name="tel" required autocomplete="tel" type="tel" inputmode="tel" placeholder="例：084-960-3110" class="mt-4 h-12 w-full rounded border-0 bg-zinc-100 px-4 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0">
+          </div>
+          <div class="border-b border-zinc-300 py-7 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:py-8">
+            <label for="message" class="text-sm font-bold">ご要望・ご質問など</label>
+            <textarea id="message" name="message" rows="5" maxlength="500" placeholder="ご要望・ご質問をご入力ください（500文字以内）" class="mt-4 w-full resize-y rounded border-0 bg-zinc-100 px-4 py-3 text-sm outline-none ring-zinc-900 focus:ring-2 lg:mt-0"></textarea>
+          </div>
+        </div>
+
+        <div class="mx-auto max-w-[680px] py-10 text-center lg:py-14">
+          <p class="text-sm leading-7 text-zinc-600">当社の<a href="privacy-policy.html" class="mx-1 border-b border-zinc-500 text-zinc-900">個人情報取扱い基本方針</a>をご確認いただき、<br class="hidden sm:block">下記の「同意する」へチェックをお願いします。</p>
+          <label class="mx-auto mt-6 flex w-fit cursor-pointer items-center gap-2 text-sm font-medium"><input name="privacy" required type="checkbox" class="h-4 w-4 rounded border-zinc-300 text-zinc-900">同意する</label>
+          <button type="submit" class="mx-auto mt-9 flex h-14 items-center gap-12 border border-zinc-900 px-8 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-900 hover:text-white">送信内容を確認する<i data-lucide="chevron-right" class="h-5 w-5"></i></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+{{> footer}}
+{{> bottom-nav}}
+{{> modals}}
+{{> scripts}}

@@ -65,6 +65,10 @@ for (const pageFile of pageFiles) {
     technologyHref: meta.technologyHref ?? 'technology.html',
     workHref: meta.workHref ?? 'work.html',
     columnHref: meta.columnHref ?? 'column.html',
+    contactHref: meta.contactHref ?? (meta.out.includes('/') ? '../contact.html' : 'contact.html'),
+    privacyHref: meta.privacyHref ?? (meta.out.includes('/') ? '../privacy-policy.html' : 'privacy-policy.html'),
+    companyHref: meta.companyHref ?? (meta.out.includes('/') ? '../company.html' : 'company.html'),
+    newsHref: meta.newsHref ?? (meta.out.includes('/') ? '../news.html' : 'news.html'),
   };
   const html = render(body, vars);
   const outPath = path.join(baseDir, meta.out);
