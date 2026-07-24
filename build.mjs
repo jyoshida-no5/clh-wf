@@ -69,6 +69,7 @@ for (const pageFile of pageFiles) {
     privacyHref: meta.privacyHref ?? (meta.out.includes('/') ? '../privacy-policy.html' : 'privacy-policy.html'),
     companyHref: meta.companyHref ?? (meta.out.includes('/') ? '../company.html' : 'company.html'),
     newsHref: meta.newsHref ?? (meta.out.includes('/') ? '../news.html' : 'news.html'),
+    modelhouseHref: meta.modelhouseHref ?? (meta.out.includes('/') ? '../modelhouse.html' : 'modelhouse.html'),
   };
   const html = render(body, vars);
   const outPath = path.join(baseDir, meta.out);

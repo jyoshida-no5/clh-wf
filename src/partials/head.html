@@ -23,6 +23,11 @@
       opacity: 1;
       transform: scale(1);
     }
+    .modelhouse-slide {
+      opacity: 0;
+      transition: opacity 600ms ease;
+    }
+    .modelhouse-slide.is-active { opacity: 1; }
     .hero-panel {
       background:
         radial-gradient(circle at 18% 18%, rgba(255,255,255,.24), transparent 28%),

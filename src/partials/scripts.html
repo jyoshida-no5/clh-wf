@@ -101,6 +101,26 @@
       setTechTabState(group, 0);
     });
 
+    document.querySelectorAll('[data-modelhouse-gallery]').forEach((gallery) => {
+      const gallerySlides = Array.from(gallery.querySelectorAll('.modelhouse-slide'));
+      const thumbnails = Array.from(gallery.querySelectorAll('[data-gallery-thumbnail]'));
+      let activeIndex = 0;
+      const setGallerySlide = (index) => {
+        activeIndex = index;
+        gallerySlides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
+        thumbnails.forEach((thumbnail, thumbnailIndex) => {
+          const isActive = thumbnailIndex === activeIndex;
+          thumbnail.setAttribute('aria-current', isActive ? 'true' : 'false');
+          thumbnail.classList.toggle('border-zinc-900', isActive);
+          thumbnail.classList.toggle('border-transparent', !isActive);
+        });
+      };
+      thumbnails.forEach((thumbnail, index) => thumbnail.addEventListener('click', () => setGallerySlide(index)));
+      if (gallerySlides.length > 1) {
+        setInterval(() => setGallerySlide((activeIndex + 1) % gallerySlides.length), 4200);
+      }
+    });
+
   </script>
 </body>
 </html>

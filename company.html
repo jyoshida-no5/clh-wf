@@ -23,6 +23,11 @@
       opacity: 1;
       transform: scale(1);
     }
+    .modelhouse-slide {
+      opacity: 0;
+      transition: opacity 600ms ease;
+    }
+    .modelhouse-slide.is-active { opacity: 1; }
     .hero-panel {
       background:
         radial-gradient(circle at 18% 18%, rgba(255,255,255,.24), transparent 28%),
@@ -126,7 +131,7 @@
         <a href="concept.html">コンセプト</a>
         <a href="technology.html">性能・テクノロジー</a>
         <a href="work.html">施工事例</a>
-        <a href="#">モデルハウス</a>
+        <a href="modelhouse.html">モデルハウス</a>
         <a href="event.html">イベント情報</a>
       </nav>
       <div class="flex items-center gap-4 text-right">
@@ -249,7 +254,7 @@
       <a href="concept.html">コンセプト</a>
       <a href="technology.html">性能・テクノロジー</a>
       <a href="work.html">施工事例</a>
-      <a href="#">モデルハウス</a>
+      <a href="modelhouse.html">モデルハウス</a>
       <a href="event.html">イベント情報</a>
       <a href="column.html">家づくりコラム</a>
       <a href="news.html">お知らせ一覧</a>
@@ -371,7 +376,7 @@
           施工事例
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
-        <a href="column.html" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
+        <a href="modelhouse.html" class="flex items-center justify-between rounded bg-zinc-50 px-4 py-3 text-sm font-semibold">
           モデルハウス
           <i data-lucide="chevron-right" class="h-4 w-4"></i>
         </a>
@@ -504,6 +509,26 @@
         button.addEventListener('click', () => setTechTabState(group, index));
       });
       setTechTabState(group, 0);
+    });
+
+    document.querySelectorAll('[data-modelhouse-gallery]').forEach((gallery) => {
+      const gallerySlides = Array.from(gallery.querySelectorAll('.modelhouse-slide'));
+      const thumbnails = Array.from(gallery.querySelectorAll('[data-gallery-thumbnail]'));
+      let activeIndex = 0;
+      const setGallerySlide = (index) => {
+        activeIndex = index;
+        gallerySlides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
+        thumbnails.forEach((thumbnail, thumbnailIndex) => {
+          const isActive = thumbnailIndex === activeIndex;
+          thumbnail.setAttribute('aria-current', isActive ? 'true' : 'false');
+          thumbnail.classList.toggle('border-zinc-900', isActive);
+          thumbnail.classList.toggle('border-transparent', !isActive);
+        });
+      };
+      thumbnails.forEach((thumbnail, index) => thumbnail.addEventListener('click', () => setGallerySlide(index)));
+      if (gallerySlides.length > 1) {
+        setInterval(() => setGallerySlide((activeIndex + 1) % gallerySlides.length), 4200);
+      }
     });
 
   </script>
